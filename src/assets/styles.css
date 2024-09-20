@@ -14,6 +14,15 @@
   src: url('./Fonts/anton.ttf') format('truetype');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
   * {
     margin: 0;
     padding: 0;
@@ -654,6 +663,9 @@ nav ul li a:hover {
 
   .member-photo {
     height: 250px;
+  }
+  .team-section{
+    margin-top: 20%;
   }
 }
 

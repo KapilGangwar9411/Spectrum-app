@@ -16,11 +16,6 @@ function App() {
          <Route path="/short-films" element={<ShortFilms />} />
         </Routes>
       </Router>
-      {/* <Header />
-      <Hero />
-      <About />
-      <TeamSection />
-      <ShortFilms /> */}
     </div>
   );
 }
