@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/styles.css';
 
-const Header = () => {
+const Header = ({ openForm }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Toggle the dropdown menu on hamburger click
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Close the menu when clicking outside
   const handleClickOutside = (event) => {
     const navLinks = document.querySelector('.nav-links');
     const hamburger = document.getElementById('hamburger');
 
     if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
-      setIsMenuOpen(false); // Close the menu if click is outside
+      setIsMenuOpen(false);
     }
   };
 
-  // Add event listener to close the menu on outside click
   useEffect(() => {
     if (isMenuOpen) {
       document.addEventListener('click', handleClickOutside);
@@ -46,7 +43,7 @@ const Header = () => {
           <li><a href="#work">Work</a></li>
         </ul>
       </nav>
-      <button className="join-btn">Join Now</button>
+      <button className="join-btn" onClick={openForm}>Join Now</button>
       <div className="hamburger" id="hamburger" onClick={toggleMenu}>
         <span className="bar"></span>
         <span className="bar"></span>

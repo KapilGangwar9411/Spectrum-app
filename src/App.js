@@ -7,6 +7,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import TeamSection from './components/TeamSection';
 import ShortFilms from './components/ShortFilms';
+import JoinNowForm from './components/JoinNowForm';
 function App() {
   return (
     <div>

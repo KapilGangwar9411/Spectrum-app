@@ -2,22 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles.css';
 
-const Hero = () => {
+const Hero = ({ openForm }) => {
   return (
-    <div class="hero-container">
-        <section class="hero">
-            <section class="hero-text-container">
-                <div class="hero-text">
-                    <h1 class="Unleash">unleash</h1>
-                    <span class="Creativity">Creativity</span>
-                    <span class="with">with</span>
-                    <h1 class="highlight-text">Spectrum</h1>
-                    <div class="find-passion">
-                        <span>Join us in Our Creative Journey</span>
-                        <button class="go-button">Join Now</button>
-                    </div>
-                </div>
-            </section>
+    <div className="hero-container">
+      <section className="hero">
+        <section className="hero-text-container">
+          <div className="hero-text">
+            <h1 className="Unleash">unleash</h1>
+            <span className="Creativity">Creativity</span>
+            <span className="with">with</span>
+            <h1 className="highlight-text">Spectrum</h1>
+            <div className="find-passion">
+              <span>Join us in Our Creative Journey</span>
+              <button className="go-button" onClick={openForm}>Join Now</button>
+            </div>
+          </div>
+        </section>
 
         <div className="image-container">
           <div className="image-wrapper">
@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="image-wrapper expanded">
             <img src="images/film-making.png" alt="Business" />
             <div className="image-info">
-            <Link to="/short-films">
+              <Link to="/short-films">
                 <h2>Film Making</h2>
               </Link>
             </div>
@@ -44,6 +44,6 @@ const Hero = () => {
       </section>
     </div>
   );
-}
+};
 
 export default Hero;
