@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles.css';
 
 const Hero = () => {
@@ -28,7 +29,9 @@ const Hero = () => {
           <div className="image-wrapper expanded">
             <img src="images/film-making.png" alt="Business" />
             <div className="image-info">
-              <h2>Film Making</h2>
+            <Link to="/short-films">
+                <h2>Film Making</h2>
+              </Link>
             </div>
           </div>
           <div className="image-wrapper">

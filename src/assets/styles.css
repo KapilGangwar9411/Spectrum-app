@@ -450,6 +450,15 @@ nav ul li a:hover {
     transform: scaleX(1);
   }
   
+  /* to keep the clickable buttons originally styled */
+  .hero-container .image-info a {
+    color: inherit;          /* Inherit color from the parent element */
+    text-decoration: none;   /* Remove underline */
+  }
+  
+  .hero-container .image-info a:hover {
+    color: inherit;          /* Keep color the same on hover */
+  }
   
   /* About us */
   
@@ -667,5 +676,81 @@ nav ul li a:hover {
 
   .member-photo {
     height: 200px;
+  }
+}
+
+
+
+/* short films */
+.short-films-container {
+  padding: 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Bricolage', sans-serif;
+  font-size: 48px;
+  color: #7a0404;
+  margin-bottom: 40px;
+}
+
+.films-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.film-item {
+  flex: 1 1 300px;
+  max-width: 350px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.film-video {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.film-title {
+  margin-top: 10px;
+  font-family: 'Bricolage', sans-serif;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .film-video {
+    height: 180px;
+  }
+
+  .film-item {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .film-video {
+    height: 150px;
+  }
+
+  .film-item {
+    max-width: 100%;
   }
 }
