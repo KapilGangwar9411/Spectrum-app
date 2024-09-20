@@ -3,18 +3,20 @@ import '../assets/styles.css';
 
 const Hero = () => {
   return (
-    <div className="hero-container">
-      <section className="hero">
-        <div className="hero-text">
-          <h1 className="Unleash">unleash</h1>
-          <span className="Creativity">Creativity</span>
-          <span className="with">with</span>
-          <h1 className="highlight-text">Spectrum</h1>
-          <div className="find-passion">
-            <span>Join us in Our Creative Journey</span>
-            <button className="go-button">Join Now</button>
-          </div>
-        </div>
+    <div class="hero-container">
+        <section class="hero">
+            <section class="hero-text-container">
+                <div class="hero-text">
+                    <h1 class="Unleash">unleash</h1>
+                    <span class="Creativity">Creativity</span>
+                    <span class="with">with</span>
+                    <h1 class="highlight-text">Spectrum</h1>
+                    <div class="find-passion">
+                        <span>Join us in Our Creative Journey</span>
+                        <button class="go-button">Join Now</button>
+                    </div>
+                </div>
+            </section>
 
         <div className="image-container">
           <div className="image-wrapper">

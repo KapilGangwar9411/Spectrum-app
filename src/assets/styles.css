@@ -28,74 +28,114 @@
   
   
   /* header css */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 120px;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.1);
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.join-btn {
+  font-family: bricolage;
+  background-color: #6CA852;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #55813D;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav ul li {
+  opacity: 1;
+}
+
+nav ul li a {
+  font-family: bricolage;
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #7a0404;
+}
+
+@media (max-width: 768px) {
   .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 120px;
-    background: rgb(255, 255, 255);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(15, 15, 15, 0.1);
-    z-index: 100;
-    transition: background-color 0.3s ease;
+    padding: 20px;
   }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 50px;
-  }
-  
+
   nav ul {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 100;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  nav ul.show {
     display: flex;
-    list-style: none;
-    gap: 40px;
   }
-  
-  nav ul li {
-    opacity: 1;
+
+  .hamburger {
+    display: flex;
   }
-  
-  nav ul li a {
-    font-family: bricolage;
-    font-size: 18px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #7a0404;
-  }
-  
-  .join-btn {
-    font-family: bricolage;
-    background-color: #6CA852;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .join-btn:hover {
-    background-color: #55813D;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .scrolled {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
+}
+
   
   /* Header Css Ends */
   
@@ -119,7 +159,7 @@
   
   
   .Unleash{
-    margin-left: 10rem;
+    margin-left: 8.3rem;
     font-family: bricolage;
     font-size: 70px;
     line-height: 1;
@@ -205,11 +245,11 @@
   }
   
   .image-container {
-    margin-right: 10%;
+    margin-right: 5%;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 45%;
+    width: 50%;
     position: relative;
     height: 120%;
     justify-content: center;
@@ -293,6 +333,67 @@
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   }
   
+  
+  .hero-text-container{
+    display: flex;
+    padding: 150px 20px;
+    align-items: center;
+    justify-content: space-between;
+    background: beige;
+    height: calc(100vh - 100px);
+    padding-top: 200px;
+  
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-text-container{
+      display: none;
+    }
+    .image-container{
+      padding: inherit;
+    }
+    .intro-section{
+      margin-top: 30%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .intro-section{
+      padding: 80%;
+    }
+  }
+  /* media queries for iphone */
+
+  /* iPhone SE, iPhone 5/5S/5C */
+@media only screen and (max-width: 320px) {
+  .hero-text-container{
+    display: none;
+  }
+  .intro-section{
+    margin-top: 30%;
+  }
+}
+
+/* iPhone 6/7/8, iPhone X, iPhone 11, iPhone 12/13 mini */
+@media only screen and (max-width: 375px) {
+  .hero-text-container{
+    display: none;
+  }
+  .intro-section{
+    margin-top: 30%;
+  }
+}
+
+/* iPhone 6/7/8 Plus, iPhone Xs Max, iPhone 11 Pro Max, iPhone 12/13 Pro Max */
+@media only screen and (max-width: 414px) {
+  .hero-text-container{
+    display: none;
+  }
+  .intro-section{
+    margin-top: 30%;
+  }
+}
+
   /* Hero section CSS ends */
   
   
@@ -332,7 +433,7 @@
     bottom: -5px;
     width: 100%;
     height: 4px;
-    background: #000000; /* Line color */
+    background: #000000;
     border-radius: 100px;
     transform: scaleX(0);
     transform-origin: left;
@@ -341,7 +442,7 @@
   
   
   .highlight-text:hover {
-    background: rgba(108, 168, 82, 0.2); /* Intensify background color */
+    background: rgba(108, 168, 82, 0.2);
     color: #021f5d;
   }
   
