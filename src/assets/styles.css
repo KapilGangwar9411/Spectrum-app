@@ -1076,7 +1076,9 @@ nav ul li a:hover {
 
 
 
+
 /* events page styling */
+/* Existing styles for the events page */
 .my-events-page {
   padding: 50px;
   text-align: center;
@@ -1129,8 +1131,12 @@ nav ul li a:hover {
   max-width: 350px;
   text-align: left;
   padding: 20px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from below */
+  animation: fadeInUp 1s ease forwards;
 }
 
+/* Hover effect for the card */
 .my-events-page .event-card:hover {
   transform: scale(1.05);
 }
@@ -1169,6 +1175,18 @@ nav ul li a:hover {
   color: #555;
 }
 
+/* Keyframe animations for fade-in effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .my-events-page .events-container {
@@ -1195,3 +1213,6 @@ nav ul li a:hover {
     font-size: 1.3rem;
   }
 }
+
+/* Events Section CSS Ends Here */
+

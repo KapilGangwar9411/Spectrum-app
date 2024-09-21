@@ -1,6 +1,5 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-import '../assets/styles.css';
+import '../assets/styles.css'; // The CSS you provided
 
 const Events = () => {
   const events = [
@@ -47,16 +46,14 @@ const Events = () => {
       <h1>Upcoming Events</h1>
       <div className="events-container">
         {events.map((event, index) => (
-          <Fade bottom key={index}>
-            <div className="event-card">
-              <img src={event.image} alt={event.title} className="event-image" />
-              <div className="event-details">
-                <h2>{event.title}</h2>
-                <p className="event-date">{event.date}</p>
-                <p>{event.description}</p>
-              </div>
+          <div className="event-card fade-in" key={index}>
+            <img src={event.image} alt={event.title} className="event-image" />
+            <div className="event-details">
+              <h2>{event.title}</h2>
+              <p className="event-date">{event.date}</p>
+              <p>{event.description}</p>
             </div>
-          </Fade>
+          </div>
         ))}
       </div>
     </div>
