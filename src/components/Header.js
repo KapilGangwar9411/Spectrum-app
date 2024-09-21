@@ -41,7 +41,7 @@ const Header = ({ openForm }) => {
           <li><a href="#contact">Contact</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#work">Work</a></li>
-          <li><a href="/events">Events & Bookings</a></li>
+          <li><a href="/events">Events & Bookings</a></li> {/* Added here */}
         </ul>
       </nav>
       <button className="join-btn" onClick={openForm}>Join Now</button>
