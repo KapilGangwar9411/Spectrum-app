@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles.css'; // The CSS you provided
+import '../assets/styles.css'; // Ensure this contains the animations
 
 const Events = () => {
   const events = [
