@@ -863,6 +863,7 @@ nav ul li a:hover {
 }
 
 /* Full-Screen Popup */
+
 .full-screen-popup {
   position: fixed;
   top: 0;
@@ -893,6 +894,7 @@ nav ul li a:hover {
 }
 
 /* Fade In and Out Animations */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -908,7 +910,6 @@ nav ul li a:hover {
   }
 }
 
-/* Popup Text Animation */
 @keyframes popupTextAnimation {
   from {
     transform: scale(0.8);
@@ -918,4 +919,30 @@ nav ul li a:hover {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+
+/* loader animation */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+}
+
+.loader-logo {
+  width: 150px;
+  animation: spin 2s linear infinite;
+}
+
+/* Spinning animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
