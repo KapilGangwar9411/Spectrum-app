@@ -82,7 +82,7 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
       {showPopup && (
         <div className="full-screen-popup">
           <div className="popup-message">
-            <h1>Thanks for Joining Spectrum!</h1>
+            <h1>Thanks for Joining Spectrum❤️!</h1>
           </div>
         </div>
       )}

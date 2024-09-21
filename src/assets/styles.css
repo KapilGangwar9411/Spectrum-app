@@ -809,6 +809,7 @@ nav ul li a:hover {
 
 /* Input Fields */
 .input-field {
+  font-family: bricolage;
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -826,6 +827,7 @@ nav ul li a:hover {
 
 /* Submit Button */
 .submit-button {
+  font-family: bricolage;
   width: 100%;
   padding: 12px;
   border: none;
@@ -842,11 +844,13 @@ nav ul li a:hover {
 }
 
 .modal-title {
+  font-family: Anton;
   font-size: 1.4rem;
   margin-bottom: 20px;
 }
 
 .error-message {
+  font-family: bricolage;
   color: red;
   margin-bottom: 10px;
 }
@@ -888,7 +892,8 @@ nav ul li a:hover {
 }
 
 .popup-message h1 {
-  color: #110156;
+  font-family: bricolage;
+  color: #000000;
   font-size: 3rem;
   animation: popupTextAnimation 1s ease-in-out;
 }
@@ -923,6 +928,7 @@ nav ul li a:hover {
 
 
 /* loader animation */
+
 .loader {
   position: fixed;
   top: 0;
@@ -932,7 +938,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
   z-index: 9999;
   opacity: 0;
   animation: fadeIn 0.5s forwards;
@@ -958,10 +964,10 @@ nav ul li a:hover {
 
 .loader-logo {
   width: 150px;
-  border-radius: 50%; /* Make the logo circular */
-  animation: scale 1.5s ease-in-out infinite alternate, 
-             rotate 2s linear infinite, 
-             shadowPulse 3s ease-in-out infinite;
+  border-radius: 50%;
+  animation: scale 0.7s ease-in-out infinite alternate, 
+             rotate 1s linear infinite, 
+             shadowPulse 1.5s ease-in-out infinite;
 }
 
 
