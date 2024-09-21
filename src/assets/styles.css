@@ -938,20 +938,6 @@ nav ul li a:hover {
   animation: fadeIn 0.5s forwards;
 }
 
-/* Fade-in animation */
-/* @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.loader-logo {
-  width: 150px;
-  animation: scale 1.5s ease-in-out infinite alternate;
-}
-@keyframes scale {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.1); }
-} */
 
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -969,8 +955,6 @@ nav ul li a:hover {
   0% { transform: scale(1); }
   100% { transform: scale(1.1); }
 }
-
-
 
 .loader-logo {
   width: 150px;
