@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import '../assets/styles.css'; // Assuming your CSS is in this file
+import '../assets/styles.css';
 
 const JoinNowForm = ({ isOpen, setIsOpen }) => {
   const [formData, setFormData] = useState({
@@ -12,7 +12,8 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
   });
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [showPopup, setShowPopup] = useState(false); // For controlling popup visibility
+  const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,16 +29,20 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
       return;
     }
 
+    setLoading(true); // Start loading animation
+
     try {
       await sendEmail(formData);
       setSubmitted(true);
-      setShowPopup(true); // Show popup
+      setShowPopup(true);
       setTimeout(() => {
-        setShowPopup(false); // Hide popup after 3 seconds
+        setShowPopup(false);
       }, 3000);
-      setIsOpen(false); // Close the modal
+      setIsOpen(false);
     } catch (err) {
       setError('Failed to send email. Please try again later.');
+    } finally {
+      setLoading(false); // Stop loading animation after submission
     }
   };
 
@@ -69,21 +74,30 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
                     onChange={handleChange} 
                     required 
                     className="input-field"
+                    disabled={loading} // Disable input while loading
                   />
                 </div>
               ))}
-              <button type="submit" className="submit-button">Submit</button>
+              <button type="submit" className="submit-button" disabled={loading}>
+                {loading ? 'Submitting...' : 'Submit'} {/* Change text when loading */}
+              </button>
             </form>
           </div>
         </div>
       )}
 
-      {/* Full-Screen Popup for Successful Submission */}
       {showPopup && (
         <div className="full-screen-popup">
           <div className="popup-message">
             <h1>Thanks for Joining Spectrum❤️!</h1>
           </div>
+        </div>
+      )}
+
+      {/* Minimal Loader */}
+      {loading && (
+        <div className="loading-overlay">
+          <div className="minimal-loader"></div>
         </div>
       )}
     </div>
