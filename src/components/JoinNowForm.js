@@ -9,7 +9,6 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
     branch: '',
     year: '',
     interest: '',
-    rating: '',
   });
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -38,7 +37,7 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
   };
 
   const sendEmail = (data) => {
-    return emailjs.send('service_h13jppi', 'template_ng8cl2b', data, 'KiF7FWz3Etc-KKmnh');
+    return emailjs.send('service_h13jppi', 'template_ng8cl2b', data, 'INeUrCc6c0cZleOnu');
   };
 
   const handleModalClick = (e) => {
@@ -51,7 +50,7 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
     <div className="form-container">
       {isOpen && (
         <div className="modal" onClick={handleModalClick}>
-          <div className="modal-content">
+          <div className="modal-content glass-effect animate-popup">
             <h2 className="modal-title">Join Us</h2>
             {error && <p className="error-message">{error}</p>}
             <form onSubmit={handleSubmit}>
