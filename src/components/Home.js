@@ -4,11 +4,12 @@ import Hero from './Hero';
 import About from './About';
 import TeamSection from './TeamSection';
 import JoinNowForm from './JoinNowForm';
-import Loader from './Loader'; // Import the loader component
+import Loader from './Loader';
+import Footer from './Footer';
 
 const Home = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [loading, setLoading] = useState(true); // New state for handling loader
+  const [loading, setLoading] = useState(true);
 
   // Function to open the form modal
   const openForm = () => {
@@ -19,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false after 3 seconds
-    }, 3000); // You can adjust the timing here
+    }, 1000); // You can adjust the timing here
 
     return () => clearTimeout(timer); // Cleanup the timer when component unmounts
   }, []);
@@ -31,12 +32,12 @@ const Home = () => {
 
   return (
     <div>
-      {/* Content will only be displayed after the loader disappears */}
       <Header openForm={openForm} />
       <Hero openForm={openForm} />
       <JoinNowForm isOpen={isFormOpen} setIsOpen={setIsFormOpen} />
       <About />
       <TeamSection />
+      <Footer />
     </div>
   );
 };
