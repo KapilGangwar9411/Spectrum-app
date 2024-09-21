@@ -1,6 +1,6 @@
-
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import '../assets/styles.css';
 
 const Events = () => {
   const events = [
@@ -43,7 +43,7 @@ const Events = () => {
   ];
 
   return (
-    <div className="events-page">
+    <div className="my-events-page">
       <h1>Upcoming Events</h1>
       <div className="events-container">
         {events.map((event, index) => (
