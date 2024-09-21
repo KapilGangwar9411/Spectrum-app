@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import '../assets/styles.css';
+import '../assets/styles.css'; // Assuming your CSS is in this file
 
 const JoinNowForm = ({ isOpen, setIsOpen }) => {
   const [formData, setFormData] = useState({
@@ -12,6 +12,7 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
   });
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false); // For controlling popup visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,14 +31,18 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
     try {
       await sendEmail(formData);
       setSubmitted(true);
-      setIsOpen(false);
+      setShowPopup(true); // Show popup
+      setTimeout(() => {
+        setShowPopup(false); // Hide popup after 3 seconds
+      }, 3000);
+      setIsOpen(false); // Close the modal
     } catch (err) {
       setError('Failed to send email. Please try again later.');
     }
   };
 
   const sendEmail = (data) => {
-    return emailjs.send('service_h13jppi', 'template_ng8cl2b', data, 'INeUrCc6c0cZleOnu');
+    return emailjs.send('service_h13jppi', 'template_7u5ytdh', data, '1P52vCXzI5J4jNBZ4');
   };
 
   const handleModalClick = (e) => {
@@ -51,7 +56,7 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
       {isOpen && (
         <div className="modal" onClick={handleModalClick}>
           <div className="modal-content glass-effect animate-popup">
-            <h2 className="modal-title">Join Us</h2>
+            <h2 className="modal-title">Join Us❤️</h2>
             {error && <p className="error-message">{error}</p>}
             <form onSubmit={handleSubmit}>
               {Object.keys(formData).map((key) => (
@@ -73,9 +78,12 @@ const JoinNowForm = ({ isOpen, setIsOpen }) => {
         </div>
       )}
 
-      {submitted && (
-        <div className="thank-you-message">
-          <p>Thank you for joining us!</p>
+      {/* Full-Screen Popup for Successful Submission */}
+      {showPopup && (
+        <div className="full-screen-popup">
+          <div className="popup-message">
+            <h1>Thanks for Joining Spectrum!</h1>
+          </div>
         </div>
       )}
     </div>

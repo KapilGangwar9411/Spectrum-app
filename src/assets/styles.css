@@ -770,7 +770,6 @@ nav ul li a:hover {
 /* form css */
 
 
-/* Modal Styles */
 .modal {
   position: fixed;
   top: 0;
@@ -831,15 +830,15 @@ nav ul li a:hover {
   padding: 12px;
   border: none;
   border-radius: 5px;
-  background-color: #28df99;
-  color: #162447;
+  background-color: #2d349d;
+  color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 20px;
 }
 
 .submit-button:hover {
-  background-color: #25c88d;
+  background-color: #1a0c61;
 }
 
 .modal-title {
@@ -861,4 +860,62 @@ nav ul li a:hover {
   border-radius: 10px;
   padding: 20px;
   width: 300px;
+}
+
+/* Full-Screen Popup */
+.full-screen-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  z-index: 1000;
+  animation: fadeIn 1s ease-in-out, fadeOut 1s ease-in-out 2s forwards;
+}
+
+/* Popup Message */
+.popup-message {
+  background: #ffffff;
+  padding: 40px 80px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.popup-message h1 {
+  color: #110156;
+  font-size: 3rem;
+  animation: popupTextAnimation 1s ease-in-out;
+}
+
+/* Fade In and Out Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Popup Text Animation */
+@keyframes popupTextAnimation {
+  from {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
