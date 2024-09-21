@@ -6,28 +6,28 @@ import TeamSection from './TeamSection';
 import JoinNowForm from './JoinNowForm';
 import Loader from './Loader';
 import Footer from './Footer';
+import MovingText from './MovingText';
 
 const Home = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Function to open the form modal
+
   const openForm = () => {
     setIsFormOpen(true);
   };
 
-  // Simulating the loading effect with a timeout
+  
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false after 3 seconds
-    }, 1000); // You can adjust the timing here
+      setLoading(false);
+    }, 1000);
 
-    return () => clearTimeout(timer); // Cleanup the timer when component unmounts
+    return () => clearTimeout(timer);
   }, []);
 
-  // Render the loader until the application is fully loaded
   if (loading) {
-    return <Loader />; // Show the loader component if still loading
+    return <Loader />;
   }
 
   return (
@@ -37,6 +37,7 @@ const Home = () => {
       <JoinNowForm isOpen={isFormOpen} setIsOpen={setIsFormOpen} />
       <About />
       <TeamSection />
+      <MovingText />
       <Footer />
     </div>
   );
